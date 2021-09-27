@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <meta charset="utf-8"/>
+        <title>Compound Interest Calculator</title>
+        <script src="https://kit.fontawesome.com/cce8238b28.js" crossorigin="anonymous"></script>
+            <style>
+                body {
+                    background-color: wheat;
+                }
+                h1{
+                    color: black;
+                    text-align: center;
+                    font-size: 50px;
+                }
+                #inputArea label{
+                font-size: 20px;
+                }
+                #inputArea ::placeholder{
+                    font-size: larger;
+                    text-align: center;
+                }
+                input[type=text]{
+                    width: 100%;
+                    padding: 10px;
+                }
+            </style>
+    </head>
+
+    <body>
+        <i style="margin-left:50%;" class="fab fa-cc-amazon-pay fa-2x"></i>
+          <h1> Compound Interest Calculator</h1>
+          <form action="#">
+            <p id="inputArea">
+             <label for="Principal">Principal</label><br><br>
+                 <input type="text" id="principal" placeholder="Amount"><br><br>
+
+             <label for="Interest Rate">Interest Rate</label><br><br>
+                 <input type="text" id="rate" placeholder="Rate In %"><br><br>
+
+             <label for="Period">Period</label><br><br>
+                 <input type="text" id="period" placeholder="Period"><br><br>
+
+             <label for="Overall Time">Overall Time</label><br><br>
+                 <input type="text" id="time" placeholder="Time Money Is Invested"><br><br>
+
+                 <button style="font-size: 20px; color:#ff0000; width: 100%; padding: 10px;" onclick="formula();">Calculate</button><br><br>
+             
+                 <label style="font-size: 40px; color:red;margin-left: 45%;" for="Final Amount">Amount</label>
+                
+            </p>
+         </form>
+                
+          <p id="ans" style="color: black; margin-left: 40%; font-size: 35px;" ></p>
+             
+        <script type="text/javascript">
+             function formula(){
+                 let r = parseFloat(document.getElementById("rate").value);
+                 let pi = parseFloat(document.getElementById("principal").value);
+                 let pe = parseFloat(document.getElementById("period").value);
+                 let t = parseFloat(document.getElementById("time").value);
+                 let value = pi * Math.pow(1 + (r/pe),  (pe * t));
+                 document.getElementById('ans').innerHTML = value.toString();
+             }
+        </script>
+    </body>
+</html>
